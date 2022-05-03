@@ -1,0 +1,172 @@
+/******************************************************************
+
+Stylesheet: ベーススタイル
+
+******************************************************************/
+.font-sm {
+  font-size: 14px;
+}
+.font-md {
+  font-size: 17px;
+}
+.font-lg {
+  font-size: 20px;
+}
+body {
+  font-family: "Yuji Syuku", serif;
+}
+a:hover {
+  text-decoration: none;
+}
+.header {
+  position: relative;
+}
+.hero-title {
+  @extend.font-lg;
+}
+.mobile-menu_btn {
+  position: absolute;
+  top: 0%;
+  right: 0%;
+}
+
+.footer {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: black;
+  margin-bottom: 0;
+
+  &_inner {
+    max-width: 400px;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+  }
+  &_title {
+    @extend.font-lg;
+    writing-mode: vertical-rl;
+  }
+
+  &_nav {
+    text-align: center;
+  }
+  &_ul {
+    list-style: none;
+    writing-mode: vertical-lr;
+    font-feature-settings: normal;
+    letter-spacing: 0.1rem;
+    
+    @extend.font-sm
+  }
+  &_li{
+    padding: 0 15px;
+  }
+}
+
+.ly_content {
+  max-width: 400px;
+  padding: 40px 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+.text-animation {
+  padding: 0 15px;
+}
+.main {
+  &-copy {
+    writing-mode: vertical-rl;
+    font-feature-settings: normal;
+    letter-spacing: 0.1rem;
+    margin: 65px auto 30px auto;
+    @extend.font-lg;
+  }
+  &-menu {
+    display: block;
+
+    &_title {
+      color: black;
+      @extend.font-lg;
+    }
+    &_inner {
+      position: relative;
+      padding-top: 60%;
+      margin: 15px 0;
+    }
+
+    &_picture {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      height: 100%;
+      object-fit: fill;
+      transform: translateY(-50%);
+    }
+    &_button {
+      text-align: center;
+    }
+  }
+  &-information {
+  }
+  &-contact {
+    text-align: center;
+    &_title {
+      @extend.font-lg;
+    }
+    &_subtitle {
+      @extend.font-md;
+    }
+  }
+}
+.backgrand-color-base {
+  background-color: #535353;
+}
+.cover-slide {
+  position: relative;
+  overflow: hidden;
+
+  &::after {
+    content: "";
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #eaebe6;
+    opacity: 0;
+  }
+  &.inview {
+    &::after {
+      opacity: 1;
+
+      @include animation(
+        $name: kf-cover-slide,
+        $duration: 1.6s,
+        $timing-function: ease-in-out
+      );
+    }
+  }
+}
+
+@keyframes kf-cover-slide {
+  0% {
+    transform-origin: left;
+    transform: scaleX(0);
+  }
+  50% {
+    transform-origin: left;
+    transform: scaleX(1);
+  }
+  50.1% {
+    transform-origin: right;
+    transform: scaleX(1);
+  }
+  100% {
+    transform-origin: right;
+    transform: scaleX(0);
+  }
+}

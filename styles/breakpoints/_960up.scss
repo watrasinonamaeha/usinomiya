@@ -1,0 +1,37 @@
+/******************************************************************
+
+Stylesheet: 960px以上のモニタで適用
+
+******************************************************************/
+.font-sm {
+  font-size: 16px;
+}
+.font-md {
+  font-size: 19px;
+}
+
+.font-lg {
+  font-size: 30px;
+}
+.ly_content {
+  max-width: 960px;
+}
+.text-animation {
+  padding: 0 45px;
+}
+.top-foot {
+  &_right {
+    display: block;
+  }
+}
+.mobile-menu_btn {
+  display: none;
+}
+.footer {
+  &_inner {
+    max-width: 960px;
+  }
+  &_li{
+      padding: 0 15px;
+  }
+}

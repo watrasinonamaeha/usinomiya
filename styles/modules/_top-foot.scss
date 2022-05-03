@@ -1,0 +1,30 @@
+.top-foot {
+  height: 60px;
+  background-color: black;
+  z-index: 1000;
+  &.lock {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  &_inner {
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+
+  }
+  &_right{
+      display: none;
+  }
+  &_title {
+    display: table-cell;
+    vertical-align: middle;
+    padding-right: 10px;
+    color: white;
+  }
+}
